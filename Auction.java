@@ -101,4 +101,24 @@ public class Auction
             return null;
         }
     }
+    
+    /**
+     * Metodo que muestra por pantalla los detalles de los items que se estan subastando
+     */
+    public void close()
+    {
+        for(Lot lot : lots)
+        {
+            if(lot.getHighestBid()!= null) //ha habido una puja
+            {
+                
+                System.out.println(lot.toString() + " bidder :" + lot.getHighestBid().getBidder().getName());
+            }
+            else
+            {
+                System.out.println(lot.toString());
+            }
+            
+        }
+    }
 }
