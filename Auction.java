@@ -121,4 +121,20 @@ public class Auction
             
         }
     }
+    
+    /**
+     * Metodo que que devuelve una colección de todos los items por los que no habido ninguna puja en este momento
+     */
+    public ArrayList getUnsold()
+    {
+        ArrayList<Lot> otherLot = new ArrayList<>(); // creo otra coleccion donde guardo los items que no han recibido ninguna puja actualmente
+        for(Lot lot : lots)
+        {
+            if(lot.getHighestBid()== null) // el objeto no ha recibido puja
+            {
+                otherLot.add(lot);   // añado ese objeto a la otra coleccion
+            }
+        }
+        return otherLot;
+    }
 }
